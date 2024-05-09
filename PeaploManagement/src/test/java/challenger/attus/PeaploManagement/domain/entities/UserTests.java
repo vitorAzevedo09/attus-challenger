@@ -1,4 +1,4 @@
-package challenger.attus.PeaploManagement.infra.entities;
+package challenger.attus.PeaploManagement.domain.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,7 +13,8 @@ public class UserTests {
 
   @Test
   public void testExistUserEntity() {
-    User user = new User("vitor azevedo silva", ZonedDateTime.now(), new Address());
+    Address address = new Address();
+    User user = new User("vitor azevedo silva", ZonedDateTime.now(), address);
     assertEquals(user.getClass(), User.class);
   }
 
