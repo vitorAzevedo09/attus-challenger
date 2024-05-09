@@ -11,8 +11,8 @@ public class AddressTests {
 
   @Test
   public void testExistAddressEntity() {
-    Address address = new Address();
-    assertEquals(address.getClass(), Address.class);
+    Address address = new Address("rua do teste", "12345678", "123", "sao paulo", "sp");
+    assertEquals(address.getCity(), "sao paulo");
   }
 
 }

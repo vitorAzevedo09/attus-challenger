@@ -13,9 +13,17 @@ public class UserTests {
 
   @Test
   public void testExistUserEntity() {
-    Address address = new Address();
-    User user = new User("vitor azevedo silva", ZonedDateTime.now(), address);
-    assertEquals(user.getClass(), User.class);
+    User user = buildUser();
+    assertEquals(user.getFullName(), "vitor azevedo silva");
+    assertEquals(user.getMainAddress().getCity(), "sao paulo");
+  }
+
+  private Address buildAddress() {
+    return new Address("rua do teste", "12345678", "123", "sao paulo", "sp");
+  }
+
+  private User buildUser() {
+    return new User("vitor azevedo silva", ZonedDateTime.now(), buildAddress());
   }
 
 }
